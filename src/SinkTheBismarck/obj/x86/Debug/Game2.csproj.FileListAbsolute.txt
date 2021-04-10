@@ -1,0 +1,47 @@
+C:\Users\Devenish\source\repos\Game2\Game2\obj\x86\Debug\Game2.csproj.CoreCompileInputs.cache
+C:\Users\Devenish\source\repos\Game2\Game2\obj\x86\Debug\Sink the Bismarck.exe
+C:\Users\Devenish\source\repos\Game2\Game2\obj\x86\Debug\Sink the Bismarck.pdb
+C:\Users\Devenish\source\repos\Game2\Game2\obj\x86\Debug\Game2.csprojAssemblyReference.cache
+C:\Users\Devenish\source\repos\Game2\Game2\bin\Windows\x86\Debug\Content\Sounds\Everybody Backing.wma
+C:\Users\Devenish\source\repos\Game2\Game2\bin\Windows\x86\Debug\Content\Sounds\Everybody Backing.xnb
+C:\Users\Devenish\source\repos\Game2\Game2\bin\Windows\x86\Debug\Content\Sprites\North Atlantic.xnb
+C:\Users\Devenish\source\repos\Game2\Game2\bin\Windows\x86\Debug\Content\Sprites\NorthAtlantic.xnb
+C:\Users\Devenish\source\repos\Game2\Game2\bin\Windows\x86\Debug\Content\Sprites\Panel 4.xnb
+C:\Users\Devenish\source\repos\Game2\Game2\bin\Windows\x86\Debug\Content\Sprites\Panel.xnb
+C:\Users\Devenish\source\repos\Game2\Game2\bin\Windows\x86\Debug\Content\Sprites\Ship3.xnb
+C:\Users\Devenish\source\repos\Game2\Game2\bin\Windows\x86\Debug\Content\Fonts\File.xnb
+C:\Users\Devenish\source\repos\Game2\Game2\bin\Windows\x86\Debug\Content\Fonts\LargeFont.xnb
+C:\Users\Devenish\source\repos\Game2\Game2\bin\Windows\x86\Debug\Content\Fonts\MediumFont.xnb
+C:\Users\Devenish\source\repos\Game2\Game2\bin\Windows\x86\Debug\Content\Fonts\SmallFont.xnb
+C:\Users\Devenish\source\repos\Game2\Game2\bin\Windows\x86\Debug\Sink the Bismarck.exe.manifest
+C:\Users\Devenish\source\repos\Game2\Game2\bin\Windows\x86\Debug\Sink the Bismarck.application
+C:\Users\Devenish\source\repos\Game2\Game2\bin\Windows\x86\Debug\Sink the Bismarck.exe
+C:\Users\Devenish\source\repos\Game2\Game2\bin\Windows\x86\Debug\Sink the Bismarck.pdb
+C:\Users\Devenish\source\repos\Game2\Game2\bin\Windows\x86\Debug\MonoGame.Framework.dll
+C:\Users\Devenish\source\repos\Game2\Game2\bin\Windows\x86\Debug\SharpDX.MediaFoundation.dll
+C:\Users\Devenish\source\repos\Game2\Game2\bin\Windows\x86\Debug\SharpDX.dll
+C:\Users\Devenish\source\repos\Game2\Game2\bin\Windows\x86\Debug\SharpDX.XAudio2.dll
+C:\Users\Devenish\source\repos\Game2\Game2\bin\Windows\x86\Debug\SharpDX.DXGI.dll
+C:\Users\Devenish\source\repos\Game2\Game2\bin\Windows\x86\Debug\SharpDX.Direct3D11.dll
+C:\Users\Devenish\source\repos\Game2\Game2\bin\Windows\x86\Debug\SharpDX.Direct2D1.dll
+C:\Users\Devenish\source\repos\Game2\Game2\bin\Windows\x86\Debug\SharpDX.XInput.dll
+C:\Users\Devenish\source\repos\Game2\Game2\bin\Windows\x86\Debug\MonoGame.Framework.xml
+C:\Users\Devenish\source\repos\Game2\Game2\bin\Windows\x86\Debug\SharpDX.MediaFoundation.xml
+C:\Users\Devenish\source\repos\Game2\Game2\bin\Windows\x86\Debug\SharpDX.xml
+C:\Users\Devenish\source\repos\Game2\Game2\bin\Windows\x86\Debug\SharpDX.XAudio2.xml
+C:\Users\Devenish\source\repos\Game2\Game2\bin\Windows\x86\Debug\SharpDX.DXGI.xml
+C:\Users\Devenish\source\repos\Game2\Game2\bin\Windows\x86\Debug\SharpDX.Direct3D11.xml
+C:\Users\Devenish\source\repos\Game2\Game2\bin\Windows\x86\Debug\SharpDX.Direct2D1.xml
+C:\Users\Devenish\source\repos\Game2\Game2\bin\Windows\x86\Debug\SharpDX.XInput.xml
+C:\Users\Devenish\source\repos\Game2\Game2\obj\x86\Debug\Sink the Bismarck.exe.manifest
+C:\Users\Devenish\source\repos\Game2\Game2\obj\x86\Debug\Sink the Bismarck.application
+C:\Users\Devenish\source\repos\Game2\Game2\obj\x86\Debug\Game2.csproj.CopyComplete
+C:\Users\Devenish\source\repos\Game2\Game2\bin\Windows\x86\Debug\Content\Sprites\Front Screen.xnb
+C:\Users\Devenish\source\repos\Game2\Game2\bin\Windows\x86\Debug\Content\Sprites\Ship Large Highlighted.xnb
+C:\Users\Devenish\source\repos\Game2\Game2\bin\Windows\x86\Debug\Content\Sprites\Ship Large.xnb
+C:\Users\Devenish\source\repos\Game2\Game2\bin\Windows\x86\Debug\Content\Sprites\Ship Small Highlighted.xnb
+C:\Users\Devenish\source\repos\Game2\Game2\bin\Windows\x86\Debug\Content\Sprites\Ship Small.xnb
+C:\Users\Devenish\source\repos\Game2\Game2\bin\Windows\x86\Debug\Content\Sounds\Explosion.xnb
+C:\Users\Devenish\source\repos\Game2\Game2\bin\Windows\x86\Debug\Content\Sounds\Gun Fire.xnb
+C:\Users\Devenish\source\repos\Game2\Game2\bin\Windows\x86\Debug\Content\Sounds\Near Miss.xnb
+C:\Users\Devenish\source\repos\Game2\Game2\bin\Windows\x86\Debug\Content\Fonts\VSmallFont.xnb

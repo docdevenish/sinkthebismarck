@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SourceFileCollection xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Profile>Reach</Profile>
+  <Platform>Windows</Platform>
+  <Config />
+  <SourceFiles>
+    <File>C:/Users/Devenish/source/repos/Game2/Game2/Content/Fonts/File.spritefont</File>
+    <File>C:/Users/Devenish/source/repos/Game2/Game2/Content/Fonts/LargeFont.spritefont</File>
+    <File>C:/Users/Devenish/source/repos/Game2/Game2/Content/Fonts/MediumFont.spritefont</File>
+    <File>C:/Users/Devenish/source/repos/Game2/Game2/Content/Fonts/SmallFont.spritefont</File>
+    <File>C:/Users/Devenish/source/repos/Game2/Game2/Content/Fonts/VSmallFont.spritefont</File>
+    <File>C:/Users/Devenish/source/repos/Game2/Game2/Content/Sounds/Everybody Backing.mp3</File>
+    <File>C:/Users/Devenish/source/repos/Game2/Game2/Content/Sounds/Explosion.wav</File>
+    <File>C:/Users/Devenish/source/repos/Game2/Game2/Content/Sounds/Gun Fire.wav</File>
+    <File>C:/Users/Devenish/source/repos/Game2/Game2/Content/Sounds/Near Miss.wav</File>
+    <File>C:/Users/Devenish/source/repos/Game2/Game2/Content/Sprites/Front Screen.JPG</File>
+    <File>C:/Users/Devenish/source/repos/Game2/Game2/Content/Sprites/NorthAtlantic.JPG</File>
+    <File>C:/Users/Devenish/source/repos/Game2/Game2/Content/Sprites/Panel 4.png</File>
+    <File>C:/Users/Devenish/source/repos/Game2/Game2/Content/Sprites/Panel.jpg</File>
+    <File>C:/Users/Devenish/source/repos/Game2/Game2/Content/Sprites/Ship Large Highlighted.png</File>
+    <File>C:/Users/Devenish/source/repos/Game2/Game2/Content/Sprites/Ship Large.png</File>
+    <File>C:/Users/Devenish/source/repos/Game2/Game2/Content/Sprites/Ship Small Highlighted.png</File>
+    <File>C:/Users/Devenish/source/repos/Game2/Game2/Content/Sprites/Ship Small.png</File>
+    <File>C:/Users/Devenish/source/repos/Game2/Game2/Content/Sprites/Ship3.png</File>
+  </SourceFiles>
+  <DestFiles>
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+  </DestFiles>
+</SourceFileCollection>
