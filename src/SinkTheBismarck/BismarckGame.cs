@@ -118,8 +118,8 @@ namespace Game2
             {
                 Random randomCourse = new Random();
                 float newCourse = Pi * 0.75f + Pi * randomCourse.Next(0, 4) / 10;
-                myShips[0].course.direction = newCourse;
-                myShips[1].course.direction = newCourse;
+                myShips[0].Course.Direction = newCourse;
+                myShips[1].Course.Direction = newCourse;
                 courseTime = 0;
             }
 

@@ -70,7 +70,7 @@ namespace Game2
                     float.TryParse(gameRoot.EnteredString, out newDirn);
                     // convert to radians
                     newDirn = newDirn * 2 * 3.14156f / 360;
-                    gameRoot.myShips[gameRoot.currentShip].course.direction = newDirn;
+                    gameRoot.myShips[gameRoot.currentShip].Course.Direction = newDirn;
                     gameRoot.D = false;
                 }
 
@@ -78,7 +78,7 @@ namespace Game2
                 {
                     float newSpeed;
                     float.TryParse(gameRoot.EnteredString, out newSpeed);
-                    gameRoot.myShips[gameRoot.currentShip].course.speed = newSpeed;
+                    gameRoot.myShips[gameRoot.currentShip].Course.Speed = newSpeed;
                     gameRoot.S = false;
                 }
 
@@ -88,7 +88,7 @@ namespace Game2
                     float.TryParse(gameRoot.EnteredString, out newDirn);
                     // convert to radians
                     newDirn = newDirn * 2 * 3.14156f / 360;
-                    gameRoot.myShips[gameRoot.currentShip].course.direction = newDirn;
+                    gameRoot.myShips[gameRoot.currentShip].Course.Direction = newDirn;
                     gameRoot.R = false;
                 }
 
@@ -98,7 +98,7 @@ namespace Game2
                     float.TryParse(gameRoot.EnteredString, out newDirn);
                     // convert to radians
                     newDirn = newDirn * 2 * 3.14156f / 360;
-                    gameRoot.myShips[gameRoot.currentShip].course.direction = newDirn;
+                    gameRoot.myShips[gameRoot.currentShip].Course.Direction = newDirn;
                     gameRoot.T = false;
                 }
 

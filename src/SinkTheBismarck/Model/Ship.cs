@@ -11,22 +11,21 @@ namespace Game2
 
     public class ShipModel  // the properties of the ship
     {
-        // these are properties of the ship
         public string Title { get; set; }
-        public string type { get; set; }
+        public string Type { get; set; }
         public string Symbol { get; set; }
         public int Size { get; set; }
         public int MaxHits { get; set; }
-        public int Disp { get; set; }
+        public int Displacement { get; set; }
         public float MaxSpeed { get; set; }
         public List<Turret> Turrets { get; set; }
     }
 
     public class ShipCourse  // the location and course of the ship
     {
-        public float speed { get; set; }
-        public float direction { get; set; }
-        public Vector2 position { get; set; }
+        public float Speed { get; set; }
+        public float Direction { get; set; }
+        public Vector2 Position { get; set; }
     }
 
     public class ShipStatus  // the status of the ship
@@ -50,81 +49,47 @@ namespace Game2
         }
     }
 
-
     // Now the Ship Class itself
 
     public class Ship : IVehicle
     {
-        public ShipModel model;
-        public ShipCourse course;
-        public ShipStatus status;
-       /* 
-        public List<Turret> Turrets { get; set; }
-  */
 
+        public string Title { get; }
+        public string Type { get; }
+        public string Symbol { get; }
+        public int Size { get; }
+        public int MaxHits { get; }
+        public int Displacement { get; }
+        public float MaxSpeed { get; }
+        public IReadOnlyList<Turret> Turrets { get; }
+
+        public ShipCourse Course { get; }
+        public ShipStatus Status { get; }
+
+        // here is the constructor
+        public Ship(ShipModel model, ShipCourse course)
+        {
+            Title = model.Title;
+            Type = model.Type;
+            Symbol = model.Symbol;
+            Size = model.Size;
+            MaxHits = model.MaxHits;
+            Displacement = model.Displacement;
+            MaxSpeed = model.MaxSpeed;
+            Turrets = model.Turrets;
+            Course = course;
+            Status = new ShipStatus();
+        }
 
         // just testing that the iVehicle interface works
         public void Move(GameTime gameTime)
         {
             double scale = 0.0001;
-            double deltaX = gameTime.ElapsedGameTime.Milliseconds * course.speed * Math.Sin(course.direction) * scale;
-            double deltaY = -gameTime.ElapsedGameTime.Milliseconds * course.speed * Math.Cos(course.direction) * scale;
-            course.position = course.position + new Vector2 ((float) deltaX, (float) deltaY);
+            double deltaX = gameTime.ElapsedGameTime.Milliseconds * Course.Speed * Math.Sin(Course.Direction) * scale;
+            double deltaY = -gameTime.ElapsedGameTime.Milliseconds * Course.Speed * Math.Cos(Course.Direction) * scale;
+            Course.Position = Course.Position + new Vector2 ((float) deltaX, (float) deltaY);
         }
 
-        // gun array? Gun:array[1..4, 1..4] of boolean;
-
-        // here is the constructor
-        public Ship(ShipModel model, ShipCourse course)
-        {
-            this.model = model;
-            this.course = course;
-            // set the status!!
-        }
-
-
-        // is this a 'setter' ?
-        public void UpdateCourse(ShipCourse course)
-        {
-            this.course = course;
-        }
-
-
-       /* public void TakeHits(float hits)
-        {
-            Hits += hits;
-            // logic for bridge/engine/active
-
-            if (Hits > MaxHits) Active = false;
-        }*/
-        /*
-        // the constructor
-        public Ship(int _index, string _title, string _symbol, int _size, int _maxHits, float _firePower, float _maxSpeed, float _speed, float _direction, Vector2 _position)
-        {
-            For I:= 1 to 4 Do ship[K].Gun[I, 1]:= true;
-            { gun active}
-            For I:= 1 to 4 Do ship[K].Gun[I, 2]:= false;
-            { re - loading}
-            For I:= 1 to 4 Do ship[K].Gun[I, 4]:= false;
-            { still re-loading}
-
-            
-            Title = _title;
-            Symbol = _symbol;
-            size = _size;
-            maxHits = _maxHits;
-            firePower = _firePower;
-            maxSpeed = _maxSpeed;
-            speed = _speed;
-            direction = _direction;
-            position = _position;
-
-            hits = 0;
-            active = true;
-            bridge = true;
-            engine = true;
-            
-        }  */
 
         public void Update()
         {
@@ -143,11 +108,11 @@ namespace Game2
             var model = new ShipModel
             {
                 Title = "Bismarck",
-                type = "Battleship",
+                Type = "Battleship",
                 Symbol = "Bis.",
                 Size = 3,
                 MaxHits = 12,
-                Disp = 41700,
+                Displacement = 41700,
                 Turrets = new List<Turret>
                 {
                     new Turret(2, 15),
@@ -160,9 +125,9 @@ namespace Game2
 
             var course = new ShipCourse
             {
-                speed = 20,
-                direction = 3.4f,
-                position = new Vector2(510, 120)
+                Speed = 20,
+                Direction= 3.4f,
+                Position = new Vector2(510, 120)
             };
 
             return new Ship(model, course);
@@ -176,11 +141,11 @@ namespace Game2
             var model = new ShipModel
             {
                 Title = "Eugen",
-                type = "Cruiser",
+                Type = "Cruiser",
                 Symbol = "Eug.",
                 Size = 2,
                 MaxHits = 9,
-                Disp = 18700,
+                Displacement= 18700,
                 Turrets = new List<Turret>
                 {
                     new Turret(2, 8),
@@ -193,9 +158,9 @@ namespace Game2
 
             var course = new ShipCourse
             {
-                speed = 20,
-                direction = 3.4f,
-                position = new Vector2(530, 124f)
+                Speed = 20,
+                Direction= 3.4f,
+                Position = new Vector2(530, 124f)
             };
 
             return new Ship(model, course);
@@ -209,11 +174,11 @@ namespace Game2
             var model = new ShipModel
             {
                 Title = "Hood",
-                type = "Battle Cruiser",
+                Type = "Battle Cruiser",
                 Symbol = "Hood",
                 Size = 3,
                 MaxHits = 10,
-                Disp = 47400,
+                Displacement= 47400,
                 Turrets = new List<Turret>
                 {
                     new Turret(2, 15),
@@ -226,9 +191,9 @@ namespace Game2
 
             var course = new ShipCourse
             {
-                speed = 25,
-                direction = 4.71f,
-                position = new Vector2(1300, 340),
+                Speed = 25,
+                Direction= 4.71f,
+                Position = new Vector2(1300, 340),
             };
 
             return new Ship(model, course);
@@ -241,11 +206,11 @@ namespace Game2
             var model = new ShipModel
             {
                 Title = "Prince of Wales",
-                type = "Battleship",
+                Type = "Battleship",
                 Symbol = "POW",
                 Size = 3,
                 MaxHits = 9,
-                Disp = 43800,
+                Displacement= 43800,
                 Turrets = new List<Turret>
                 {
                     new Turret(2, 14),
@@ -258,9 +223,9 @@ namespace Game2
 
             var course = new ShipCourse
             {
-                speed = 25,
-                direction = 4.71f,
-                position = new Vector2(1300, 380)
+                Speed = 25,
+                Direction= 4.71f,
+                Position = new Vector2(1300, 380)
             };
 
             return new Ship(model, course);
@@ -273,11 +238,11 @@ namespace Game2
             var model = new ShipModel
             {
                 Title = "Repulse",
-                type = "Battle Cruiser",
+                Type = "Battle Cruiser",
                 Symbol = "Rep.",
                 Size = 3,
                 MaxHits = 8,
-                Disp = 27600,
+                Displacement= 27600,
                 Turrets = new List<Turret>
                 {
                     new Turret(2, 15),
@@ -290,9 +255,9 @@ namespace Game2
 
             var course = new ShipCourse
             {
-                speed = 0,
-                direction = 4.71f,
-                position = new Vector2(1250, 560)
+                Speed = 0,
+                Direction= 4.71f,
+                Position = new Vector2(1250, 560)
             };
 
             return new Ship(model, course);
@@ -306,11 +271,11 @@ namespace Game2
             var model = new ShipModel
             {
                 Title = "King George V",
-                type = "Battleship",
+                Type = "Battleship",
                 Symbol = "KGV",
                 Size = 3,
                 MaxHits = 10,
-                Disp = 42200,
+                Displacement= 42200,
                 Turrets = new List<Turret>
                 {
                     new Turret(2, 14),
@@ -323,9 +288,9 @@ namespace Game2
 
             var course = new ShipCourse
             {
-                speed = 0,
-                direction = 4.71f,
-                position = new Vector2(1250, 520f)
+                Speed = 0,
+                Direction= 4.71f,
+                Position = new Vector2(1250, 520f)
             };
 
             return new Ship(model, course);
@@ -338,11 +303,11 @@ namespace Game2
             var model = new ShipModel
             {
                 Title = "Rodney",
-                type = "Battleship",
+                Type = "Battleship",
                 Symbol = "Rod.",
                 Size = 3,
                 MaxHits = 10,
-                Disp = 34300,
+                Displacement= 34300,
                 Turrets = new List<Turret>
                 {
                     new Turret(3, 16),
@@ -355,9 +320,9 @@ namespace Game2
 
             var course = new ShipCourse
             {
-                speed = 20,
-                direction = 5.2f,
-                position = new Vector2(1150, 960)
+                Speed = 20,
+                Direction= 5.2f,
+                Position = new Vector2(1150, 960)
             };
 
             return new Ship(model, course);
@@ -369,11 +334,11 @@ namespace Game2
             var model = new ShipModel
             {
                 Title = "Norfolk",
-                type = "Heavy Cruiser",
+                Type = "Heavy Cruiser",
                 Symbol = "Norf",
                 Size = 2,
                 MaxHits = 5,
-                Disp = 10200,
+                Displacement= 10200,
                 Turrets = new List<Turret>
                 {
                     new Turret(2, 8),
@@ -386,9 +351,9 @@ namespace Game2
 
             var course = new ShipCourse
             {
-                speed = 20,
-                direction = 3.4f,
-                position = new Vector2(480, 60f)
+                Speed = 20,
+                Direction= 3.4f,
+                Position = new Vector2(480, 60f)
             };
 
             return new Ship(model, course);
@@ -401,11 +366,11 @@ namespace Game2
             var model = new ShipModel
             {
                 Title = "Suffolk",
-                type = "Heavy Cruiser",
+                Type = "Heavy Cruiser",
                 Symbol = "Suff",
                 Size = 2,
                 MaxHits = 5,
-                Disp = 9750,
+                Displacement= 9750,
                 Turrets = new List<Turret>
                 {
                     new Turret(2, 8),
@@ -418,9 +383,9 @@ namespace Game2
 
             var course = new ShipCourse
             {
-                speed = 20,
-                direction = 3.4f,
-                position = new Vector2(570, 100)
+                Speed = 20,
+                Direction= 3.4f,
+                Position = new Vector2(570, 100)
             };
 
             return new Ship(model, course);
