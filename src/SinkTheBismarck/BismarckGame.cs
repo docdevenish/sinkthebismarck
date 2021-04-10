@@ -4,6 +4,8 @@ using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
 using Microsoft.Xna.Framework.Audio;
 using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace Game2
 {
@@ -21,8 +23,10 @@ namespace Game2
         public SoundEffect gunFire;
         public enum Game_mode { start, normal, battle, shutdown };
         public Game_mode myMode;
-        public Ship[] myShips = new Ship[9];
-        public int currentShip;
+        public List<Ship> Ships { get; } = new List<Ship>();
+        public List<Ship> AliveShips => Ships; // later, Ships.Where(s => !s.Destroyed).ToList();
+        public List<Ship> PlayerShips { get; } = new List<Ship>();
+        public Ship ActiveShip { get; set; }
         public MyInputState inputstate = new MyInputState();
         public bool D, S, R, T = false;
         const float Pi = 3.1416f;
@@ -55,18 +59,26 @@ namespace Game2
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
-            myMode = Game_mode.start;
-            myShips[0] = Ship.getBismarck();
-            myShips[1] = Ship.getEugen();
-            myShips[2] = Ship.getHood();
-            myShips[3] = Ship.getPOW();
-            myShips[4] = Ship.getKJV();
-            myShips[5] = Ship.getRepulse();
-            myShips[6] = Ship.getRodney();
-            myShips[7] = Ship.getNorfolk();
-            myShips[8] = Ship.getSuffolk();
-            currentShip = 2;
+            Ships.Add(Ship.getBismarck());
+            Ships.Add(Ship.getEugen());
 
+            PlayerShips.Add(Ship.getHood());
+            PlayerShips.Add(Ship.getPOW());
+            PlayerShips.Add(Ship.getKJV());
+            PlayerShips.Add(Ship.getRepulse());
+            PlayerShips.Add(Ship.getRodney());
+            PlayerShips.Add(Ship.getNorfolk());
+            PlayerShips.Add(Ship.getSuffolk());
+
+            PlayerShips.ForEach(p => Ships.Add(p));
+
+            ActiveShip = PlayerShips.First();
+
+        }
+
+        public Ship GetShip(ShipId shipId)
+        {
+            return Ships.First(s => s.Id == shipId);
         }
 
         /// <summary>
@@ -118,8 +130,8 @@ namespace Game2
             {
                 Random randomCourse = new Random();
                 float newCourse = Pi * 0.75f + Pi * randomCourse.Next(0, 4) / 10;
-                myShips[0].Course.Direction = newCourse;
-                myShips[1].Course.Direction = newCourse;
+                GetShip(ShipId.Bismarck).Course.Direction = newCourse;
+                GetShip(ShipId.Eugen).Course.Direction = newCourse;
                 courseTime = 0;
             }
 
@@ -128,10 +140,7 @@ namespace Game2
             // TODO: Add your update logic here
             if (myMode == Game_mode.normal)
             {
-                for (int i = 0; i < 9; i++)
-                {
-                    myShips[i].Move(gameTime);
-                }
+                Ships.ForEach(s => s.Move(gameTime));
             }
             base.Update(gameTime);
 
@@ -158,7 +167,7 @@ namespace Game2
             if (myMode == Game_mode.normal)
             {
                 // draw_Status_Panel.Draw_Panel;
-                MyDraw.DrawNormalScreen(this, myShips);
+                MyDraw.DrawNormalScreen(this);
             }
         }
 

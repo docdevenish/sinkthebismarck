@@ -25,14 +25,15 @@ namespace Game2
 
             if (inState.IsUp())
             {
-                gameRoot.currentShip++;
-                if (gameRoot.currentShip == 9) gameRoot.currentShip = 2;
+                var index = gameRoot.PlayerShips.IndexOf(gameRoot.ActiveShip) + 1;
+                if (index >= gameRoot.PlayerShips.Count) index = 0;
+                gameRoot.ActiveShip = gameRoot.PlayerShips.ElementAt(index);
             }
 
             if (gameRoot.inputstate.IsDown())
             {
-                gameRoot.currentShip--;
-                if (gameRoot.currentShip == 1) gameRoot.currentShip = 8;
+                var index = gameRoot.PlayerShips.IndexOf(gameRoot.ActiveShip) - 1;
+                gameRoot.ActiveShip = index < 0 ? gameRoot.PlayerShips.Last() : gameRoot.PlayerShips.ElementAt(index);
             }
 
             if (gameRoot.inputstate.IsDirection())
@@ -70,7 +71,7 @@ namespace Game2
                     float.TryParse(gameRoot.EnteredString, out newDirn);
                     // convert to radians
                     newDirn = newDirn * 2 * 3.14156f / 360;
-                    gameRoot.myShips[gameRoot.currentShip].Course.Direction = newDirn;
+                    gameRoot.ActiveShip.Course.Direction = newDirn;
                     gameRoot.D = false;
                 }
 
@@ -78,7 +79,7 @@ namespace Game2
                 {
                     float newSpeed;
                     float.TryParse(gameRoot.EnteredString, out newSpeed);
-                    gameRoot.myShips[gameRoot.currentShip].Course.Speed = newSpeed;
+                    gameRoot.ActiveShip.Course.Speed = newSpeed;
                     gameRoot.S = false;
                 }
 
@@ -88,7 +89,7 @@ namespace Game2
                     float.TryParse(gameRoot.EnteredString, out newDirn);
                     // convert to radians
                     newDirn = newDirn * 2 * 3.14156f / 360;
-                    gameRoot.myShips[gameRoot.currentShip].Course.Direction = newDirn;
+                    gameRoot.ActiveShip.Course.Direction = newDirn;
                     gameRoot.R = false;
                 }
 
@@ -98,7 +99,7 @@ namespace Game2
                     float.TryParse(gameRoot.EnteredString, out newDirn);
                     // convert to radians
                     newDirn = newDirn * 2 * 3.14156f / 360;
-                    gameRoot.myShips[gameRoot.currentShip].Course.Direction = newDirn;
+                    gameRoot.ActiveShip.Course.Direction = newDirn;
                     gameRoot.T = false;
                 }
 

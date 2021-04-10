@@ -65,40 +65,28 @@ namespace Game2
             gameRoot.spriteBatch.End();
         }
 
-        public static void DrawNormalScreen(BismarckGame gameRoot, Ship[] ship)
+        public static void DrawNormalScreen(BismarckGame gameRoot)
         {
             gameRoot.spriteBatch.Begin();
             gameRoot.spriteBatch.Draw(NorthAtlantic, new Rectangle(10, 10, 1900, 1105), Color.LightCyan);
 
             // Draw the Status Panel
             gameRoot.spriteBatch.Draw(Panel, new Rectangle(1550, 550, 300, 500), Color.LightCyan);
-            gameRoot.spriteBatch.DrawString(font24, ship[gameRoot.currentShip].Title, new Vector2(1590, 600), Color.White);
-            gameRoot.spriteBatch.DrawString(font12, "Type:  "+ ship[gameRoot.currentShip].Type, new Vector2(1600, 930), Color.White);
-            gameRoot.spriteBatch.DrawString(font12, "Displacement:  " + ship[gameRoot.currentShip].Displacement + " tonnes", new Vector2(1600, 955), Color.White);
-            gameRoot.spriteBatch.DrawString(font12, "Max. Speed:  " + ship[gameRoot.currentShip].MaxSpeed + " knots", new Vector2(1600, 980), Color.White);
-            gameRoot.spriteBatch.DrawString(font12, "Armament:  " + ship[gameRoot.currentShip].Size + " inch guns", new Vector2(1600, 1005), Color.White);
+            gameRoot.spriteBatch.DrawString(font24, gameRoot.ActiveShip.Title, new Vector2(1590, 600), Color.White);
+            gameRoot.spriteBatch.DrawString(font12, "Type:  "+ gameRoot.ActiveShip.Type, new Vector2(1600, 930), Color.White);
+            gameRoot.spriteBatch.DrawString(font12, "Displacement:  " + gameRoot.ActiveShip.Displacement + " tonnes", new Vector2(1600, 955), Color.White);
+            gameRoot.spriteBatch.DrawString(font12, "Max. Speed:  " + gameRoot.ActiveShip.MaxSpeed + " knots", new Vector2(1600, 980), Color.White);
+            gameRoot.spriteBatch.DrawString(font12, "Armament:  " + gameRoot.ActiveShip.Size + " inch guns", new Vector2(1600, 1005), Color.White);
 
             // Draw the Ships
-            for (int i = 0; i < 9; i++)
+            gameRoot.Ships.ForEach(s =>
             {
-                if (i!= gameRoot.currentShip)
-                {
-                    if (i == 0 || i == 2 || i == 4 || i == 6)
-                        gameRoot.spriteBatch.Draw(ShipLarge, ship[i].Course.Position, null, Color.Red, ship[i].Course.Direction, Vector2.Zero, 0.07f, SpriteEffects.None, 0);
-                    else
-                        gameRoot.spriteBatch.Draw(ShipSmall, ship[i].Course.Position, null, Color.Red, ship[i].Course.Direction, Vector2.Zero, 0.07f, SpriteEffects.None, 0);
+                var texture = s.MaxHits > 5 ? ShipLarge : ShipSmall;
+                if (s == gameRoot.ActiveShip) texture = s.MaxHits > 5 ? ShipLargeHighlighted : ShipSmallHighlighted;
+                gameRoot.spriteBatch.Draw(texture, s.Course.Position, null, Color.Red, s.Course.Direction, Vector2.Zero, 0.07f, SpriteEffects.None, 0);
+                gameRoot.spriteBatch.DrawString(font16, s.Symbol, s.Course.Position, Color.Black);
+            });
 
-                    gameRoot.spriteBatch.DrawString(font16, ship[i].Symbol, ship[i].Course.Position, Color.Black);
-                } else
-                {
-                    if (i == 0 || i == 2 || i == 4 || i == 6)
-                        gameRoot.spriteBatch.Draw(ShipLargeHighlighted, ship[i].Course.Position, null, Color.Red, ship[i].Course.Direction, Vector2.Zero, 0.07f, SpriteEffects.None, 0);
-                    else
-                        gameRoot.spriteBatch.Draw(ShipSmallHighlighted, ship[i].Course.Position, null, Color.Red, ship[i].Course.Direction, Vector2.Zero, 0.07f, SpriteEffects.None, 0);
-
-                    gameRoot.spriteBatch.DrawString(font16, ship[i].Symbol, ship[i].Course.Position, Color.Black);
-                }
-            }
             // gameRoot.spriteBatch.DrawString(font24, "entered number is " + ship[gameRoot.currentShip].Course.Direction, new Vector2(700, 1000), Color.Black);
 
             // Draw any other dialogues

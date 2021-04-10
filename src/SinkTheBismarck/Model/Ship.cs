@@ -50,10 +50,23 @@ namespace Game2
     }
 
     // Now the Ship Class itself
+    public enum ShipId
+    {
+        Bismarck = 0,
+        Eugen = 1,
+        Hood = 2,
+        POW = 3,
+        KJV = 4,
+        Repulse = 5,
+        Rodney = 6,
+        Norfolk = 7,
+        Suffolk = 8
+    }
+
 
     public class Ship : IVehicle
     {
-
+        public ShipId Id { get; }
         public string Title { get; }
         public string Type { get; }
         public string Symbol { get; }
@@ -67,8 +80,9 @@ namespace Game2
         public ShipStatus Status { get; }
 
         // here is the constructor
-        public Ship(ShipModel model, ShipCourse course)
+        public Ship(ShipId id, ShipModel model, ShipCourse course)
         {
+            Id = id;
             Title = model.Title;
             Type = model.Type;
             Symbol = model.Symbol;
@@ -130,7 +144,7 @@ namespace Game2
                 Position = new Vector2(510, 120)
             };
 
-            return new Ship(model, course);
+            return new Ship(ShipId.Bismarck, model, course);
 
         }
 
@@ -163,7 +177,7 @@ namespace Game2
                 Position = new Vector2(530, 124f)
             };
 
-            return new Ship(model, course);
+            return new Ship(ShipId.Eugen, model, course);
 
         }
 
@@ -196,7 +210,7 @@ namespace Game2
                 Position = new Vector2(1300, 340),
             };
 
-            return new Ship(model, course);
+            return new Ship(ShipId.Hood, model, course);
 
         }
 
@@ -228,7 +242,7 @@ namespace Game2
                 Position = new Vector2(1300, 380)
             };
 
-            return new Ship(model, course);
+            return new Ship(ShipId.POW, model, course);
 
         }
 
@@ -260,7 +274,7 @@ namespace Game2
                 Position = new Vector2(1250, 560)
             };
 
-            return new Ship(model, course);
+            return new Ship(ShipId.Repulse, model, course);
 
         }
 
@@ -293,7 +307,7 @@ namespace Game2
                 Position = new Vector2(1250, 520f)
             };
 
-            return new Ship(model, course);
+            return new Ship(ShipId.KJV, model, course);
 
         }
 
@@ -325,7 +339,7 @@ namespace Game2
                 Position = new Vector2(1150, 960)
             };
 
-            return new Ship(model, course);
+            return new Ship(ShipId.Rodney, model, course);
 
         }
 
@@ -356,7 +370,7 @@ namespace Game2
                 Position = new Vector2(480, 60f)
             };
 
-            return new Ship(model, course);
+            return new Ship(ShipId.Norfolk, model, course);
 
         }
 
@@ -388,7 +402,7 @@ namespace Game2
                 Position = new Vector2(570, 100)
             };
 
-            return new Ship(model, course);
+            return new Ship(ShipId.Suffolk, model, course);
 
         }
     }
